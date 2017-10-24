@@ -6,9 +6,9 @@
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-
 </head>
-<body>
+<body style="padding-bottom:0">
+    <div id="header-main"></div>
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -17,28 +17,64 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @*@Html.ActionLink("Hyundai", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })*@
+                @*<a href="@Url.Action("Index","Home")" style="text-decoration:none;" class="navbar-brand"><img src="http://hyundai-ansuong.com/Content/image/logo.png" height="30"/></a>*@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("Trang Chủ", "Index", "Home")</li>
+                    @*<li>@Html.ActionLink("Liên Hệ", "Contact", "Home")</li>*@
+                    @if (HttpContext.Current.User.IsInRole("ADMIN"))
+                    {
+                        <li>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="button">
+                                Quản Lý<span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="@Url.Action("Index", "Xes")">Xe</a></li>
+                                <li><a href="@Url.Action("Index", "TinTucs")">Tin Tức</a></li>
+                                <li><a href="@Url.Action("Index", "DangKyLaiThus")">Đăng Ký Lái Thử</a></li>
+                            </ul>
+                        </li>
+                    }
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
         </div>
     </div>
+
+
     <div class="container body-content">
+        <a id="toppage" style="cursor:pointer;position:fixed;z-index:100;right:0;bottom:50px;margin-right:10px"><img src="~/Content/images/top-button.png" height="50" width="50" /></a>
         @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
+        <div style="clear:both"></div>
     </div>
+    <footer style="background-color:black;padding:10px;margin-top:10px;bottom:0;margin-bottom:0">
+        <p style="color:#D6D6D6" class="text-center">&copy; @DateTime.Now.Year. HyunDai 14DTHC05</p>
+        <p style="color:#D6D6D6" class="text-center">Hyundai Gia Định: 8A Lý Thường Kiệt,P12, Q5</p>
+        <p style="color:#D6D6D6" class="text-center">Hyundai Ngọc An: P.Hiệp Bình Phước, Q.Thủ Đức, Tp.HCM</p>
+        <p style="color:#D6D6D6" class="text-center">Hyundai Nam Kỳ Khởi Nghĩa: Nam Kỳ Khởi Nghĩa, P.7, Q.3.</p>
+        <p style="color:#D6D6D6" class="text-center">Hyundai Gia Định 3S: Phổ Quang, P. 2, Q.Tân Bình,Tp. HCM.</p>
+        <p style="color:#D6D6D6" class="text-center">Website: http://localhost-14dthc05.com - fb:https://www.facebook.com/thinhhoangrsa</p>
+        <p style="color:#D6D6D6" class="text-center">Hyundai Ngọc An: P.Hiệp Bình Phước, Q.Thủ Đức, Tp.HCM</p>
+        <p style="color:#D6D6D6" class="text-center">Điện thoại: xxxx xxx xxx </p>
+    </footer>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
+    <script>
+        $(window).scroll(function () {
+            if ($(this).scrollTop() > 100) {
+                $('#toppage').fadeIn();
+            } else {
+                $('#toppage').fadeOut();
+            }
+        });
+        $('#toppage').click(function () {
+            $("html, body").animate({ scrollTop: 0 }, 'slow');
+            return false;
+        });
+    </script>
 </body>
 </html>

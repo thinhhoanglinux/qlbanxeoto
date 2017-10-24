@@ -215,6 +215,37 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\images\1csdl.png" />
+    <Content Include="Content\images\1detailpro.png" />
+    <Content Include="Content\images\1qldklt.png" />
+    <Content Include="Content\images\1qlxe.png" />
+    <Content Include="Content\images\1sql2012.png" />
+    <Content Include="Content\images\1vs2017.png" />
+    <Content Include="Content\images\2detailpro.png" />
+    <Content Include="Content\images\2qlxe.png" />
+    <Content Include="Content\images\2vs2017.png" />
+    <Content Include="Content\images\3qlxe.png" />
+    <Content Include="Content\images\addcar.jpg" />
+    <Content Include="Content\images\addnews.png" />
+    <Content Include="Content\images\cart.png" />
+    <Content Include="Content\images\cartwhile.png" />
+    <Content Include="Content\images\ClassQuangBaXe.jpg" />
+    <Content Include="Content\images\grand-i10-sedan-12-at-ckd-2017.jpg" />
+    <Content Include="Content\images\homepage.jpg" />
+    <Content Include="Content\images\Hyundai-Elantra-phien-ban-2017-an-tuong.png" />
+    <Content Include="Content\images\hyundai-grand-i10-2017-_img9465-231048.jpg" />
+    <Content Include="Content\images\Logo-Hyundai-Accent-5-cua.png" />
+    <Content Include="Content\images\Logo-Hyundai-Grand-i10-1.png" />
+    <Content Include="Content\images\Logo-Hyundai-Santafe-22-may-dau.png" />
+    <Content Include="Content\images\Logo-Hyundai-Sonata-2017.png" />
+    <Content Include="Content\images\Mua-o-to-chay-Grab-Uber-can-luu-y-dieu-gi.jpg" />
+    <Content Include="Content\images\Top-10-xe-o-to-ban-chay-trong-thang-9-12.png" />
+    <Content Include="Content\images\top-button.png" />
+    <Content Include="Content\images\UCQLBanHang.jpg" />
+    <Content Include="Content\images\UCQLKho.jpg" />
+    <Content Include="Content\images\UCQLNghiepVu.jpg" />
+    <Content Include="Content\images\UCTongQuan.jpg" />
+    <Content Include="Content\images\Xe-Hyundai-Santafe-2017-logo-1.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -224,6 +255,8 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\images\ClassQuangBaXe.jpg.bak" />
+    <Content Include="Content\images\UCTongQuan.jpg.bak" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
