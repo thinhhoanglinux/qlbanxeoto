@@ -1,0 +1,61 @@
+﻿@model qlbanxeoto.Models.TinTuc
+
+@{
+    ViewBag.Title = "Chi tiết";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="text-center text-danger">Chi tiết</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal col-md-8">
+        <dt>
+            @Html.DisplayNameFor(model => model.TieuDe)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TieuDe)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NoiDung)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NoiDung)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ThoiGianDang)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ThoiGianDang)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LoaiTinTuc.TenLoaiTinTuc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LoaiTinTuc.TenLoaiTinTuc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NhanVien.HoTen)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NhanVien.HoTen)
+        </dd>
+    </dl>
+    <div class="col-md-4">
+        <img width="300" height="300" src="@Url.Content(Model.Hinh)" />
+    </div>
+    <p>
+        @Html.ActionLink("Sửa", "Edit", new { id = Model.TinTucId }, new { @class = "btn btn-success" })
+        @Html.ActionLink("Quay lại", "Index", "TinTucs", new { @class = "btn btn-danger" })
+    </p>
+</div>
+

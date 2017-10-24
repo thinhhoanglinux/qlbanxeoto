@@ -276,10 +276,15 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\TinTucs\Index.cshtml" />
+    <Content Include="Views\TinTucs\Details.cshtml" />
+    <Content Include="Views\TinTucs\Create.cshtml" />
+    <Content Include="Views\TinTucs\Delete.cshtml" />
+    <Content Include="Views\TinTucs\Delete2.cshtml" />
+    <Content Include="Views\TinTucs\Deleted.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\TinTucs\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

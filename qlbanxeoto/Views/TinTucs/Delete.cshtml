@@ -1,0 +1,61 @@
+﻿@model qlbanxeoto.Models.TinTuc
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div>
+    <hr />
+    <dl class="dl-horizontal col-md-8">
+        <dt>
+            @Html.DisplayNameFor(model => model.TieuDe)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TieuDe)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NoiDung)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NoiDung)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ThoiGianDang)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ThoiGianDang)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.LoaiTinTuc.TenLoaiTinTuc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LoaiTinTuc.TenLoaiTinTuc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NhanVien.HoTen)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NhanVien.HoTen)
+        </dd>
+    </dl>
+    <div class="col-md-4">
+        <img width="300" height="300" src="@Url.Content(Model.Hinh)" />
+    </div>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Xóa" class="btn btn-danger" /> |
+            @Html.ActionLink("Quay lại", "Index")
+        </div>
+    }
+</div>

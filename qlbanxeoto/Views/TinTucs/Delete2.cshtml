@@ -1,0 +1,77 @@
+﻿@model qlbanxeoto.Models.Xe
+
+@{
+    ViewBag.Title = "Phục Hồi";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div>
+    <hr />
+    <dl class="dl-horizontal col-md-8">
+        <dt>
+            @Html.DisplayNameFor(model => model.Ten)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ten)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Gia)
+        </dt>
+
+        <dd>
+            <span>@Model.Gia.ToString("#,#,#") Đ</span>
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DanhGia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DanhGia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ThoiGian)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ThoiGian)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TrangThai)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TrangThai)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LoaiXe.Ten)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LoaiXe.Ten)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.MoTa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MoTa)
+        </dd>
+    </dl>
+    <div class="col-md-4">
+        <img width="300" height="300" src="@Url.Content(Model.Hinh)" />
+    </div>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Phục Hồi" class="btn btn-danger" /> |
+            @Html.ActionLink("Quay lại", "Deleted")
+        </div>
+    }
+</div>

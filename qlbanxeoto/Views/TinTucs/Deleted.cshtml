@@ -1,0 +1,62 @@
+﻿@model IEnumerable<qlbanxeoto.Models.Xe>
+
+@{
+    ViewBag.Title = "Xe đã xóa";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="text-center btn-info" style="padding:10px">Xe đã xóa</h2>
+<table class="table table-hover table-responsive">
+    <tr class="active">
+        <th>
+            @Html.DisplayNameFor(model => model.Ten)
+        </th>
+        <th style="width:400px">
+            @Html.DisplayNameFor(model => model.MoTa)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Gia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DanhGia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ThoiGian)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LoaiXe.Ten)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ten)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MoTa)
+            </td>
+            <td>
+                <span>@item.Gia.ToString("#,#,#") Đ</span>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DanhGia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ThoiGian)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LoaiXe.Ten)
+            </td>
+            <td>
+                @Html.ActionLink("Phục Hồi", "Delete2", new { id = item.XeId }, new { @class = "btn btn-danger" })
+            </td>
+        </tr>
+    }
+
+</table>
+<div class="form-actions no-color">
+    @Html.ActionLink("Quay lại", "Index")
+</div>
