@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace qlbanxeoto.Models
@@ -55,10 +56,10 @@ namespace qlbanxeoto.Models
 
         [Required]
         [DataType(DataType.Password)]
-        [Display(Name = "Password")]
+        [Display(Name = "Mật khẩu")]
         public string Password { get; set; }
 
-        [Display(Name = "Remember me?")]
+        [Display(Name = "Lưu mật khẩu?")]
         public bool RememberMe { get; set; }
     }
 
@@ -72,13 +73,37 @@ namespace qlbanxeoto.Models
         [Required]
         [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
         [DataType(DataType.Password)]
-        [Display(Name = "Password")]
+        [Display(Name = "Mật khẩu")]
         public string Password { get; set; }
 
         [DataType(DataType.Password)]
-        [Display(Name = "Confirm password")]
+        [Display(Name = "Xác nhận mật khẩu")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
+
+        [Required]
+        [Display(Name = "Họ và tên")]
+        [StringLength(255, ErrorMessage = "Tên không được quá 255 ký tự.")]
+        public string HoTen { get; set; }
+
+        [Required]
+        [Display(Name = "Ngày sinh")]
+        public DateTime NgaySinh { get; set; }
+
+        [Required]
+        [Display(Name = "Số điện thoại")]
+        public string Sdt { get; set; }
+
+        [Required]
+        [Display(Name = "Địa chỉ")]
+        public string DiaChi { get; set; }
+
+        [Required]
+        [Display(Name = "Ngày vào làm")]
+        public DateTime NgayVaoLam { get; set; }
+
+        [Display(Name = "Trạng thái")]
+        public Boolean TrangThai { get; set; }
     }
 
     public class ResetPasswordViewModel
